@@ -1,0 +1,14 @@
+{
+  "name": "udemy-complete-react",
+  "version": "1.0.0",
+  "description": "Indecision App",
+  "main": "index.js",
+  "repository": "https://github.com/delster/udemy-complete-react.git",
+  "author": "David Elster <davidandtheweb@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
