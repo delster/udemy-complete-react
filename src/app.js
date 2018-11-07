@@ -1,4 +1,16 @@
-console.log('App.js is running!');
+console.log("App.js is running!");
+
+var app = {
+  title: "Indecision App",
+  subtitle: "A Udemy course example."
+};
+
+var appTemplate = (
+  <div class="app">
+    <h1 className="title">{app.title}</h1>
+    <p className="subtitle">{app.subtitle}</p>
+  </div>
+);
 
 var template = (
   <div>
@@ -11,14 +23,20 @@ var template = (
   </div>
 );
 
+var user = {
+  name: "David",
+  age: 29,
+  location: "Philadelphia"
+};
+
 var templateTwo = (
   <div>
-    <h1>David Elster</h1>
-    <p>Age: 29</p>
-    <p>Location: Philadelphia</p>
+    <h1>{user.name}</h1>
+    <p>Age: {user.age}</p>
+    <p>Location: {user.location}</p>
   </div>
 );
 
-var appRoot = document.getElementById('root');
+var appRoot = document.getElementById("root");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(appTemplate, appRoot);

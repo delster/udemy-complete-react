@@ -1,56 +1,84 @@
-'use strict';
+"use strict";
 
-console.log('App.js is running!');
+console.log("App.js is running!");
+
+var app = {
+  title: "Indecision App",
+  subtitle: "A Udemy course example."
+};
+
+var appTemplate = React.createElement(
+  "div",
+  { "class": "app" },
+  React.createElement(
+    "h1",
+    { className: "title" },
+    app.title
+  ),
+  React.createElement(
+    "p",
+    { className: "subtitle" },
+    app.subtitle
+  )
+);
 
 var template = React.createElement(
-  'div',
+  "div",
   null,
   React.createElement(
-    'h1',
+    "h1",
     null,
-    'Indecision App'
+    "Indecision App"
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'This is some info'
+    "This is some info"
   ),
   React.createElement(
-    'ol',
+    "ol",
     null,
     React.createElement(
-      'li',
+      "li",
       null,
-      'Item one'
+      "Item one"
     ),
     React.createElement(
-      'li',
+      "li",
       null,
-      'Item two'
+      "Item two"
     )
   )
 );
 
+var user = {
+  name: "David",
+  age: 29,
+  location: "Philadelphia"
+};
+
 var templateTwo = React.createElement(
-  'div',
+  "div",
   null,
   React.createElement(
-    'h1',
+    "h1",
     null,
-    'David Elster'
+    user.name
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'Age: 29'
+    "Age: ",
+    user.age
   ),
   React.createElement(
-    'p',
+    "p",
     null,
-    'Location: Philadelphia'
+    "Location: ",
+    user.location
   )
 );
 
-var appRoot = document.getElementById('root');
+var appRoot = document.getElementById("root");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(appTemplate, appRoot);
