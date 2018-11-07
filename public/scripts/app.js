@@ -4,7 +4,8 @@ console.log("App.js is running!");
 
 var app = {
   title: "Indecision App",
-  subtitle: "A Udemy course example."
+  subtitle: "Put your life in the hands of a computer",
+  options: ['One', 'Two']
 };
 
 var appTemplate = React.createElement(
@@ -15,25 +16,15 @@ var appTemplate = React.createElement(
     { className: "title" },
     app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     "p",
     { className: "subtitle" },
     app.subtitle
-  )
-);
-
-var template = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    "Indecision App"
   ),
   React.createElement(
     "p",
     null,
-    "This is some info"
+    app.options.length > 0 ? 'Here are your options' : 'No options'
   ),
   React.createElement(
     "ol",
@@ -56,29 +47,31 @@ var user = {
   age: 29,
   location: "Philadelphia"
 };
-
+var getLocation = function getLocation(loc) {
+  return React.createElement(
+    "p",
+    null,
+    "Location: ",
+    loc ? loc : 'Unknown'
+  );
+};
 var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    user.name
+    user.name ? user.name : 'Anonymous'
   ),
-  React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     "p",
     null,
     "Age: ",
     user.age
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location: ",
-    user.location
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById("root");
 
-ReactDOM.render(appTemplate, appRoot);
+ReactDOM.render(templateTwo, appRoot);
